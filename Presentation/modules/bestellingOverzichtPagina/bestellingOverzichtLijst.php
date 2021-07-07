@@ -1,6 +1,6 @@
 <section id="bestellingOverzicht">
 
-    <h2>Uw bestelling</h2>
+    <h2><?php echo $titel ?></h2>
 
     <a href="index.php">Terug naar pizzamenu</a>
 
@@ -26,8 +26,8 @@
         </div>
     </div>
 
-    <?php if (count($bestellingen) > 1) { ?>
-        <h2>Eerdere bestellingen</h2>
+    <?php if (count($bestellingen) > 1 && $toonEerdereBestellingen) { ?>
+        <!-- <h2>Eerdere bestellingen</h2> -->
 
         <ul>
             <?php for ($i = 1; $i < count($bestellingen); $i++) { ?>

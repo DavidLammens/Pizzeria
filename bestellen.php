@@ -41,7 +41,7 @@ if (isset($_POST['action'])) {
             $meldingService->setMelding(
                 "Uw bestelling is goed ontvangen."
             );
-            $headerService->header('bestellingOverzicht.php');
+            $headerService->header('bestellingOverzicht.php?laatsteBestelling');
         } catch (DBException $e) {
             $meldingService->setMelding(
                 "Oeps, er ging iets mis, probeer het later opnieuw."
