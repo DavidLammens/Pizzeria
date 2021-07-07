@@ -43,6 +43,11 @@ class HeaderService
         return $this->location;
     }
 
+    public function setLocation(string $location): void
+    {
+        $this->location = $location;
+    }
+
     public function header($string = null): void
     {
         $headerString = "Location: ";
