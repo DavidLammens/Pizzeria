@@ -23,12 +23,13 @@
             <input type="hidden" name="plaatsId" id="PlaatsInput-hidden" value="<?php echo $klantService->getKlantPlaatsId() ?>">
             <label>Telefoonnummer</label>
             <input type="text" name="telefoonnummer" placeholder="Telefoonnummer*" value="<?php echo $klantService->getKlantTelefoonnummer() ?>">
-            <div>
                 <p>*De velden met een * zijn verplicht</p>
+            <div>
                 <input type="hidden" name="header" value="<?php echo $headerService->getLocation() ?>">
                 <input type="submit" value="Wijzigen" class="btn" name="action">
-                <input type="<?php echo $accountBtnType ?>" value="Mijn account" name="action" class="btn">
                 <input type="submit" value="Annuleren" name="action" class="btn">
+                <input type="submit" value="Mijn account" name="action" class="btn" <?php echo $btnHide ?>>
+                <input type="submit" value="Mijn bestellingen" name="action" class="btn" <?php echo $btnHide ?>>
             </div>
         </div>
     </form>

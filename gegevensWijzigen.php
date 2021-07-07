@@ -18,7 +18,7 @@ if (!$klantService->klantIsSaved()) {
     $headerService->header("index.php");
 }
 
-$accountBtnType = $klantService->ingelogd() ? "submit" : "hidden";
+$btnHide = $klantService->ingelogd() ? null : "hidden";
 
 
 try {
@@ -76,6 +76,10 @@ if (isset($_POST['action'])) {
 
     if ($_POST['action'] === "Mijn account") {
         $headerService->header("accountGegevensWijzigen.php");
+    }
+
+    if ($_POST['action'] === "Mijn bestellingen") {
+        $headerService->header("bestellingOverzicht.php");
     }
 }
 
