@@ -1,0 +1,714 @@
+@charset "utf-8";
+
+/*----VARS----*/
+
+/*COLORS*/
+:root {
+  --kleur-groen: #1d7c00;
+  --kleur-lichterGroen: #25a600;
+  --kleur-rood: #d50000;
+  --kleur-lichterRood: #ff0000;
+  --kleur-donkerderRood: #d50000;
+  --kleur-accent: #d50000;
+  --kleur-main: #1d7c00;
+  --kleur-grijs: #b4b4b4;
+  --kleur-wit: #ffffff;
+}
+/*VARIA*/
+
+:root {
+  --border-radius: 7px;
+}
+
+/* ----NORMALIZE---- */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+em {
+  font-weight: 900;
+}
+
+th {
+  font-weight: 600;
+}
+
+/**** ----ALGEMEEN---- ****/
+body {
+  font-family: "Work Sans", Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+main,
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main {
+  position: relative;
+}
+
+h1 a {
+  font-size: 1.8em;
+  font-weight: 600;
+  padding-bottom: 0.6em;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: inherit;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: 600;
+  padding-bottom: 0.6em;
+  text-transform: capitalize;
+}
+
+h3 {
+  font-size: 1.4em;
+  font-weight: 400;
+  padding-bottom: 0;
+}
+
+h4 {
+  font-size: 1.2em;
+  font-weight: 300;
+  padding-bottom: 0.6em;
+}
+
+.toggler:hover {
+  cursor: pointer;
+}
+
+.btn {
+  color: var(--kleur-wit);
+  background-color: var(--kleur-groen);
+  border-radius: var(--border-radius);
+  height: 2em;
+  min-width: 5em;
+}
+
+.btn:hover,
+.btn:focus {
+  color: var(--kleur-wit);
+  background-color: var(--kleur-lichterGroen);
+}
+
+.disabled,
+.disabled:hover,
+.disabled:focus {
+  background-color: var(--kleur-grijs);
+  color: var(--kleur-wit);
+}
+
+input,
+select,
+option {
+  height: 2em;
+  margin: 0.35em;
+  border-radius: var(--border-radius);
+  border: 2px solid var(--kleur-main);
+}
+
+#side .btn.delete,
+#main .btn.delete {
+  background-color: var(--kleur-rood);
+  border-color: var(--kleur-rood);
+}
+
+#side .btn.delete:hover,
+#side .btn.delete:focus,
+#main .btn.delete:hover,
+#main .btn.delete:focus {
+  color: var(--kleur-wit);
+  background-color: var(--kleur-lichterRood);
+}
+
+.hide,
+#main #registratie .hide,
+#main #accountGegevens .hide {
+  display: none;
+}
+
+/*HEADER*/
+
+header {
+  border-top: 1.5em solid var(--kleur-groen);
+  border-bottom: 1.5em solid var(--kleur-donkerderRood);
+  margin-bottom: 1em;
+}
+
+/*FOOTER*/
+
+footer {
+  box-shadow: 0 -1em 1em 0 #155c00,
+    0 1em 1em 0 #af0000;
+  margin: 3.5em 0 2em 0;
+  padding: 0.1em;
+  width: 100%;
+  position: sticky;
+  top:calc(100vh - (3em));
+}
+
+/*----MAIN-----*/
+
+#main {
+  margin: 0.6em;
+  margin-bottom: 2.3em;
+  padding: 0;
+  border: 2px solid var(--kleur-accent);
+  border-radius: var(--border-radius);
+}
+
+#main > section > h2 {
+  margin: 0;
+  padding: 0.12em 0 0.24em 0;
+  width: 100%;
+  text-align: center;
+  background-color: var(--kleur-accent);
+  color: var(--kleur-wit);
+}
+
+#main .subCards {
+  margin: 1em;
+  border: 2px solid var(--kleur-main);
+  border-radius: var(--border-radius);
+  padding: 0;
+}
+
+#main .subCards h3 {
+  margin: 0;
+  padding: 0 0 0.15em 0.5em;
+  width: 100%;
+  background-color: var(--kleur-main);
+  color: var(--kleur-wit);
+}
+
+#main .innerCard {
+  margin: 1em;
+  font-size: 0.9em;
+  border: 2px solid var(--kleur-accent);
+  border-radius: var(--border-radius);
+  padding: 0;
+  width: 100%;
+}
+
+#main .innerCard h4 {
+  margin: 0;
+  padding: 0 0 0.1em 0.5em;
+  width: 100%;
+  background-color: var(--kleur-wit);
+  color: var(--kleur-accent);
+  border-bottom: 2px solid var(--kleur-accent);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+#main .innerCard p {
+  margin: 0.25em 0.5em;
+}
+
+#main .btn.delete {
+  max-width: fit-content;
+  width: auto;
+  min-width: fit-content;
+  height: 2em;
+  padding: 0 0.5em;
+}
+
+/*-FORMS-*/
+
+#main .form form > div {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75em;
+}
+
+#main .form form > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#main .form form > div > div > p {
+  color: var(--kleur-accent);
+  margin: 0.5em;
+}
+
+#main .form form > div + div {
+  padding: 0;
+}
+
+#main .form form > div:last-child {
+  padding-bottom: 0.75em;
+}
+
+/*REGISTRATIE*/
+
+#registratie > a {
+  margin-left: 1em;
+  color: var(--kleur-rood);
+}
+
+#main #registratie > a:hover {
+  margin-left: 1em;
+  color: var(--kleur-lichterRood);
+}
+
+/*-----einde forms-------*/
+
+/*PIZZAMENU*/
+
+#pizzaMenu article > :nth-child(2) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#pizzaMenu article > :nth-child(2) > * {
+  margin: 0.75em;
+}
+
+#pizzaMenu article > :nth-child(2) > :nth-child(2) {
+  width: calc(100% - (120px + 2.5em));
+  margin-left: 0;
+}
+
+#pizzaMenu form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#pizzaMenu input,
+#pizzaMenu select {
+  border: 2px solid var(--kleur-main);
+}
+
+
+#pizzaMenu .innerCard {
+  margin: 0.5em 0.1em;
+}
+
+/*WINKELMAND MAIN*/
+
+#main #winkelmandMain > :nth-child(3) > form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  border: none;
+  padding: 0.5em 0;
+}
+
+#main #winkelmandMain > :nth-child(3) > form > :first-child {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.5em;
+  align-items: flex-start;
+}
+
+#main #winkelmandMain > :nth-child(3) > form > :last-child {
+  margin-top: 0.5em;
+}
+
+#main #winkelmandMain .innerCard {
+  width: calc(100% - (2em));
+}
+
+#main #winkelmandMain .innerCard > div {
+  margin: 0.5em 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/*BESTELLINGOVERZICHT*/
+
+#bestellingOverzicht ul {
+  list-style-type: none;
+}
+
+#bestellingOverzicht .subCards > div,
+#bestellingOverzicht .subCards > div > div {
+  margin: 0.5em;
+}
+
+#bestellingOverzicht .subCards ul {
+  margin: 0.5em;
+  list-style-type: disc;
+}
+
+#bestellingOverzicht .subCards li {
+  margin: 0.5em;
+}
+
+#bestellingOverzicht .opmerkingen {
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+#bestellingOverzicht .totaal {
+  font-weight: 700;
+}
+
+#bestellingOverzicht > a {
+  margin-left: 1em;
+  color: var(--kleur-groen);
+}
+
+#bestellingOverzicht > a:hover {
+  margin-left: 1em;
+  color: var(--kleur-lichterGroen);
+}
+
+/*----SIDE-----*/
+
+main #side {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+  /* justify-self: stretch; */
+  margin: 0.75em;
+  margin-bottom: 0;
+  padding: 0 0.75em;
+  font-size: 0.8em;
+  overflow: auto;
+  border: 2px solid var(--kleur-accent);
+  border-radius: var(--border-radius);
+}
+
+#side > * {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.75em 0 0 0;
+  border: 2px solid var(--kleur-main);
+  border-radius: var(--border-radius);
+  width: 100%;
+  padding: 0;
+}
+
+#side > :last-child {
+  margin-bottom: 0.75em;
+}
+
+#side > * > :nth-child(2) {
+  margin-top: 0.75em;
+}
+
+#side > * > :last-child {
+  margin-bottom: 0.75em;
+}
+
+#side h2 {
+  font-size: 1.3em;
+  font-weight: 500;
+  padding-bottom: 0.4em;
+}
+
+#side > * > h2 {
+  margin: 0;
+  padding: 0 0 0.2em 0;
+  width: 100%;
+  text-align: center;
+  background-color: var(--kleur-main);
+  color: var(--kleur-wit);
+}
+
+#side h3 {
+  padding-bottom: 0.4em;
+}
+
+#side form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#side input {
+  min-width: 12em;
+  width: 50%;
+  max-width: 20em;
+}
+
+#side .btn {
+  width: 95%;
+}
+
+#side .btn.delete.X {
+  max-width: 1.5em;
+  min-width: 1.5em;
+  height: 1.5em;
+  padding: .1em 0 0 .05em;
+}
+
+/* GEBRUIKER SIDE */
+
+#gebruikerSide label {
+  display: block;
+  width: 6.5em;
+  margin: 0.35em;
+  margin-left: 0.5em;
+}
+
+/*KLANTGEGEVENS SIDE*/
+
+#klantGegevensSide {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#klantGegevensSide ul {
+  padding-bottom: 0.5em;
+  list-style-type: none;
+  margin-left: 1em;
+  align-self: flex-start;
+}
+
+/*WINKELMAND SIDE*/
+
+#winkelmandSide td {
+  text-align: center;
+}
+
+#winkelmandSide th:last-of-type {
+  text-align: left;
+  padding-left: 0.25em;
+}
+
+/*UITLEG SIDE*/
+
+#uitlegSide p {
+  padding: 0 0.75em;
+}
+
+/*-------einde side-------*/
+
+/*MELDING*/
+
+#melding {
+  position: fixed;
+  top: 28vh;
+  left: 50vw;
+  background-color: var(--kleur-wit);
+  border: 2px solid var(--kleur-accent);
+  border-radius: var(--border-radius);
+  box-shadow: 1px 1px 8px 1px;
+  z-index: 10;
+  transform: translateX(-50%);
+  min-width: 17em;
+}
+
+#melding h3 {
+  background-color: var(--kleur-accent);
+  color: var(--kleur-wit);
+  padding: 0.2em 0.5em;
+}
+
+#melding > div {
+  text-align: center;
+}
+
+#melding p {
+  margin: 1em;
+}
+
+#melding .btn {
+  margin: 1em;
+  border: 2px solid var(--kleur-groen);
+}
+
+/*-----------------------------------------*/
+
+
+/* min width 450px*/
+
+@media screen and (min-width: 450px) {
+
+  #main .form form > div {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #main .form form label {
+    display: block;
+    width: 13em;
+    text-align: right;
+    margin-left: calc((100% - (30.5em)) / 2);
+    margin-right: 1em;
+  }
+
+  #main .form form input {
+    width: 15em;
+    margin-right: calc((100% - (30.5em)) / 2);
+  }
+
+  #main .form form input[type="checkbox"] {
+    width: 1.2em;
+    text-align: left;
+    margin-right: 1em;
+  }
+
+  #main .form form input[type="checkbox"] + label {
+    width: auto;
+    text-align: left;
+    margin-left: 1em;
+  }
+
+  #main .form form .btn {
+    margin: 0.75em 0 0.5em 0;
+  }
+  
+  #side {
+    font-size: 0.9em;
+  }
+}
+
+/* MIN-WIDTH 900px */
+
+@media screen and (min-width: 900px) {
+  
+  .wrapper,
+  main {
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    min-width: 875px;
+    width: 80%;
+    max-width: 1150px;
+  }
+
+  main{
+    min-height: 70vh;
+  }
+
+  #main {
+    order: 0;
+    width: 70%;
+  }
+
+  #side {
+    order: 1;
+    width: 30%;
+    min-width: 20em;
+    min-height: 76.5vh;
+    height:100%;
+    max-height: 83vh;
+    position: sticky;
+    top: 5em;
+  }
+
+  #gebruikerSide form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
