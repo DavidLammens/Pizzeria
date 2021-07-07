@@ -44,7 +44,7 @@
             <form action="bestellen.php" method="post">
                 <div class="opmerkingen">
                     <label for="opmerkingen">Opmerkingen </label>
-                    <textarea name="opmerkingen" id="opmerkingen" cols="25" rows="4" maxlength="160"></textarea>
+                    <textarea name="opmerkingen" id="opmerkingen" cols="25" rows="4" maxlength="160"><?php echo $klantService->getKlant()->getOpmerkingen() ?></textarea>
                 </div>
                 <div id="totaal">Totaal: € <?php echo $winkelmandService->getPrintTotaal() ?></div>
                 <div>
