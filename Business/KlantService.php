@@ -64,13 +64,12 @@ class KlantService
             null
         );
         if (!$this->klantIsSaved()) {
-            $this->klant = $klantDAO->create($this->klant);
+            $this->Saveklant($klantDAO->create($this->klant));
         } else {
-            $this->klant = $klantDAO->update($this->klant);
+            $this->Saveklant($klantDAO->update($this->klant));
         }
-        $this->saveKlant($this->klant);
 
-        if ($ookAccount && $this->klant->getGebruikersAccount() === null) {
+        if ($ookAccount && $this->getKlant()->getGebruikersAccount() === null) {
             $gebruikersAccount = $gebruikersAccountService->registreer(
                 $emailadres,
                 $wachtwoord,
@@ -79,7 +78,7 @@ class KlantService
             $this->linkGebruikersAccount($gebruikersAccount);
         }
 
-        return $this->klant;
+        return $this->getKlant();
     }
 
     //WIJZIGEN
@@ -319,7 +318,7 @@ class KlantService
 
     public function getKlantPostcodePlaats(): string
     {
-        return $this->getKlantPostcode() . $this->getKlantPlaatsNaam();
+        return $this->getKlantPostcode() . " " .  $this->getKlantPlaatsNaam();
     }
 
     public function getKlantTelefoonnummer(): ?string
