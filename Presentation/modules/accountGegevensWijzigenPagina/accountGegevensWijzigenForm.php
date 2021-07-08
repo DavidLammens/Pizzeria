@@ -19,8 +19,10 @@
             <label for="promo">Ja, stuur me aanbiedingen via email!</label>
         </div>
         <div>
+            <p>*De velden met een * zijn verplicht</p>
+        </div>
+        <div>
             <div>
-                <p>*De velden met een * zijn verplicht</p>
                 <input type="submit" name="action" value="Wijzigen" class="btn">
                 <input type="submit" name="action" value="Annuleren" class="btn">
             </div>

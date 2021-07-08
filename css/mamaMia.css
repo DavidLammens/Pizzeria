@@ -321,9 +321,10 @@ footer {
   display: flex;
   flex-direction: column;
   padding: 0.75em;
+  padding-bottom: 0;
 }
 
-#main .form form > div p {
+#main section.form form p {
   color: var(--kleur-accent);
   margin: 0.5em;
 }
