@@ -51,9 +51,7 @@ class GebruikersAccountDAO
             ));
             $dbh = null;
 
-            $gebruikersAccount = $this->getByEmailadres($emailadres);
-
-            return $gebruikersAccount;
+            return $this->getByEmailadres($emailadres);
         } catch (Exception $exception) {
 
             throw new DBException($exception->getMessage());
@@ -87,6 +85,7 @@ class GebruikersAccountDAO
             }
 
             $dbh = null;
+
             return $gebruikersAccount;
         } catch (Exception $exception) {
 
@@ -121,6 +120,7 @@ class GebruikersAccountDAO
             }
 
             $dbh = null;
+
             return $gebruikersAccount;
         } catch (Exception $exception) {
 
@@ -158,9 +158,7 @@ class GebruikersAccountDAO
             ));
             $dbh = null;
 
-            $gebruikersAccount = $this->getById($gebruikersAccount->getId());
-
-            return $gebruikersAccount;
+            return $this->getById($gebruikersAccount->getId());
         } catch (Exception $exception) {
 
             throw new DBException($exception->getMessage());

@@ -243,7 +243,7 @@ header {
 
 footer {
   box-shadow: 0 -1em 1em 0 #155c00, 0 1em 1em 0 #af0000;
-  margin: 3.5em 0 2em 0;
+  margin: 2.5em 0 2em 0;
   padding: 0.1em;
   width: 100%;
   position: sticky;
@@ -688,7 +688,7 @@ main #side {
   }
 
   main {
-    min-height: 77vh;
+    min-height: calc(100vh - (12.5em));
   }
 
   #main {
@@ -702,6 +702,7 @@ main #side {
     min-width: 20em;
     min-height: 70%;
     max-height: 86vh;
+    max-height: calc(100vh - (10em));
     position: sticky;
     top: 5em;
   }
